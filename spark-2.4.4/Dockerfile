@@ -12,5 +12,5 @@ RUN pip3 --no-cache-dir install pyspark==2.4.4
 RUN rm $SPARK_HOME/jars/kubernetes-client-4.1.2.jar
 ADD https://repo1.maven.org/maven2/io/fabric8/kubernetes-client/4.9.2/kubernetes-client-4.9.2.jar $SPARK_HOME/jars/
 ADD https://repo1.maven.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.9.10/jackson-datatype-jsr310-2.9.10.jar $SPARK_HOME/jars/
-
+RUN chmod 755 $SPARK_HOME/jars/*
 USER jovyan
